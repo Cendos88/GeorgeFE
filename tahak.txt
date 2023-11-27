@@ -1,0 +1,23 @@
+vsechno se sklada z komponent
+kdyz vracim componentu musi to bejt jenom jeden html element
+kdyz chci vratit vic elementu tak to obaliv ve fragmentu a ne divu vole
+a asi ho musim importovat ale muzu misto <fragment> pouzit <>
+neni tam for loopa tak se pouziva na rendrovani listu [].map
+{(item)=>
+<li> {item} </li>
+}
+a bude to chit specific key or id takze
+{(item)=>
+<li key={item.id}> {item} </li>
+}
+kdyz vracim comp tak to tak muzu pouzivat jenom html element
+nebo react comp
+ale muzu tam dat {}
+misto ternary operatoru mam pouzit js mrdku
+true && neco vrati neco
+false && neco vrati false a to v reactu znamena nic
+vyzkousej si bootstrap
+kazdy element ma onclick property jako atribut v html pred prvni uzavrenou>
+v ts davam typ parametru do funkce jako(even: MouseEvent) co jsem pred tim importnul
+54:00 to checkni znovu to je mazec trochu moc jakoze pristup k promenym jinak
+58:45 dulezity

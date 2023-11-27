@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import Greeting from './components/Greeting'
 import './App.css';
+import AccountList from './components/AccountList';
+import TransactionList from './components/TransactionList';
+import { useEffect, useState } from 'react';
+import useFetch from './components/useFetch';
+import { BrowserRouter as Router, Route, Switch,useParams} from 'react-router-dom/cjs/react-router-dom.min';
+import Home from './components/Home';
+import PayMoney from './components/PayMoney';
+import HomeBtn from './components/HomeBtn';
 
 function App() {
+  //const jwt =""
+ 
+ 
+
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='App'>
+        <Greeting />
+        <HomeBtn/>
+        
+        {/*  <Home/>
+      <TransactionList transactions={transactions} /> */}
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route path="/pay/:accountId">
+            <PayMoney/>
+          </Route>
+          <Route  path='/account/:id'>
+            
+            <TransactionList/>
+           
+          </Route>
+
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
